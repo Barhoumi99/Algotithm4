@@ -1,0 +1,20 @@
+ALGORITHM SORT
+VAR
+    arr : ARRAY_OF INTEGER [10];
+    i;j;aux : INTEGER
+BEGIN
+    FOR i FROM 0 TO arr.length STEP 1  DO
+        write ("entrer l'elem de " i+1 ":")
+        read (arr[i])
+    END_FOR
+    FOR i FROM 1 TO arr.length STEP 1 DO  
+        FOR j=i  and j>0 STEP -1  DO
+            if (arr[j] < arr[j-1]) DO
+                aux := arr[j]
+                arr[j] := arr[j-1]
+                arr[j-1] := aux
+            END_if   
+        END_FOR
+    END_FOR
+    write (arr)
+END
